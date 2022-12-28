@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Android Native Demo Suite" parallel="tests" thread-count="2" verbose="0">
+<suite name="Android Native Demo Suite" parallel="tests" thread-count="10" verbose="0">
 
-	<test name="iOS RDC App test" enabled="false">
+	<test name="iOS RDC App test" enabled="true">
 		<parameter name="rdc" value="true"></parameter>
 		<parameter name="deviceName" value="iPhone.*"></parameter>
 		<parameter name="platformVersion" value="1[5-6].*"></parameter>
@@ -12,9 +12,51 @@
 		</classes>
 	</test>
 
+	<test name="iOS RDC App test 2" enabled="true">
+		<parameter name="rdc" value="true"></parameter>
+		<parameter name="deviceName" value="iPad.*"></parameter>
+		<parameter name="platformVersion" value="1[4-6].*"></parameter>
+		<parameter name="app" value="SauceLabs-Demo-App.ipa"></parameter>
+
+		<classes>
+			<class name="sauce.demo.tests.ios.DemoAppTest"/>
+		</classes>
+	</test>
+
+	<test name="iOS Simulator App test" enabled="false">
+		<parameter name="rdc" value="false"></parameter>
+		<parameter name="deviceName" value="iPhone 14 Simulator"></parameter>
+		<parameter name="platformVersion" value="16.1"></parameter>
+		<parameter name="app" value="SauceLabs-Demo-App.Simulator.zip"></parameter>
+
+		<classes>
+			<class name="sauce.demo.tests.ios.DemoAppTest"/>
+		</classes>
+	</test>
+
 	<test name="Android RDC App test" enabled="true">
 		<parameter name="rdc" value="true"></parameter>
 		<parameter name="deviceName" value="Samsung.*"></parameter>
+		<parameter name="platformVersion" value="12"></parameter>
+		<parameter name="app" value="my-demo-app-android.apk"></parameter>
+		<classes>
+			<class name="sauce.demo.tests.android.DemoAppTest"/>
+		</classes>
+	</test>
+
+	<test name="Android RDC App test 2" enabled="true">
+		<parameter name="rdc" value="true"></parameter>
+		<parameter name="deviceName" value="Google Pixel.*"></parameter>
+		<parameter name="platformVersion" value="13"></parameter>
+		<parameter name="app" value="my-demo-app-android.apk"></parameter>
+		<classes>
+			<class name="sauce.demo.tests.android.DemoAppTest"/>
+		</classes>
+	</test>
+
+	<test name="Android Emulator App test" enabled="false">
+		<parameter name="rdc" value="false"></parameter>
+		<parameter name="deviceName" value="Android GoogleAPI Emulator"></parameter>
 		<parameter name="platformVersion" value="12"></parameter>
 		<parameter name="app" value="my-demo-app-android.apk"></parameter>
 		<classes>
