@@ -34,13 +34,13 @@ Make sure that when you downloaded the files from the releases page, that you re
 If you want to use Android emulators, Android real devices, iOS simulators or iOS real devices in the Sauce Labs platform, you need to upload
 the apps to the Sauce Storage.
 
-##### Manual upload
+#### Manual upload
 Execute the following steps to manually upload the apps:
 - Login to the Sauce Labs platform
 - Go to **LIVE** > **Mobile App**
 - Click on **App Upload** and OR select the folder, OR drag the apps to the screen to upload them
 
-##### Automated upload
+#### Automated upload
 You can find a script to upload them to, OR the US, OR EU DC in [this](../../helpers/push_apps_to_storage.sh)-file. You can push the files to the
 storage by doing the following from the folder `appium-app-examples`:
 
