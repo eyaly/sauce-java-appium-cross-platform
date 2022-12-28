@@ -4,7 +4,6 @@ Mobile automated testing using Appium and Java
 ---
 ## Setup  
 
----
 ### Sauce Labs setup
 1. Free [Sauce account](https://saucelabs.com/sign-up)
 2. Make sure you know how to find your Sauce Labs Username and Access Key by going to the [Sauce Labs user settings page](https://app.saucelabs.com/user-settings)
@@ -14,10 +13,40 @@ Mobile automated testing using Appium and Java
 1. We will run our automated tests on Sauce Labs devices; therefore, there is no need to install Appium Server.
 
 ---
-### Demo app(s)
-The demo apps that has been used for all these tests can be found [here](https://github.com/saucelabs/sample-app-mobile/releases).
+### Demo app(s)   
+
+1. The Android demo apps that has been used for the Android tests can be found [here](https://github.com/saucelabs/my-demo-app-android/releases).
+2. The iOS demo apps that has been used for the iOS tests can be found [here](https://github.com/saucelabs/my-demo-app-ios/releases).   
 Be aware of the fact that and iOS simulator uses a different build then a iOS real device. So please check the file you
 download.
+
+> The advice is to download the files to an `apps` folder in the root of this folder.
+
+Make sure that when you downloaded the files from the releases page, that you rename the apps to the following:
+
+- `mda-{#.#.#-#}.apk` => `my-demo-app-android.apk`
+- `SauceLabs-Demo-App.ipa` => `SauceLabs-Demo-App.ipa`
+- `saucelabs-demo-app.simulator.zip` => `SauceLabs-Demo-App.Simulator.zip`
+
+**If you don't do that then the scripts can't find the apps!**
+
+#### Upload apps to Sauce Storage
+If you want to use Android emulators, Android real devices, iOS simulators or iOS real devices in the Sauce Labs platform, you need to upload
+the apps to the Sauce Storage.
+
+##### Manual upload
+Execute the following steps to manually upload the apps:
+- Login to the Sauce Labs platform
+- Go to **LIVE** > **Mobile App**
+- Click on **App Upload** and OR select the folder, OR drag the apps to the screen to upload them
+
+##### Automated upload
+You can find a script to upload them to, OR the US, OR EU DC in [this](../../helpers/push_apps_to_storage.sh)-file. You can push the files to the
+storage by doing the following from the folder `appium-app-examples`:
+
+    cd src/test/java/sauce/demo/helpers/
+    push_apps_to_storage.sh
+
 ---
 ### Gitpod setup
 
