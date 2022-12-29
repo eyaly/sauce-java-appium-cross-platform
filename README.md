@@ -81,8 +81,12 @@ echo $SAUCE_ACCESS_KEY
 
 Run the tests
 
-```bash
-mvn clean test -DtestngXmlFile=demo.xml
+```java
+        // If using the US DC
+        mvn clean test -Dregion=us
+
+        // If using the EU DC
+        mvn clean test -Dregion=eu
 ```
 
 <br/>
