@@ -151,7 +151,11 @@ Setup environment variables on your system
 Run the tests
 
 ```java
-mvn clean test -DtestngXmlFile=demo.xml
+        // If using the US DC
+        mvn clean test -Dregion=us
+
+        // If using the EU DC
+        mvn clean test -Dregion=eu
 ```
 
 <br/>
