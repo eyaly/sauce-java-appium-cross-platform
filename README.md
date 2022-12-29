@@ -26,7 +26,7 @@ Make sure that when you downloaded the files from the releases page, that you re
 
 - `mda-{#.#.#-#}.apk` => `my-demo-app-android.apk`
 - `SauceLabs-Demo-App.ipa` => `SauceLabs-Demo-App.ipa`
-- `saucelabs-demo-app.simulator.zip` => `SauceLabs-Demo-App.Simulator.zip`
+- `Saucelabs-demo-app.simulator.zip` => `SauceLabs-Demo-App.Simulator.zip`
 
 **If you don't do that then the scripts can't find the apps!**
 
@@ -45,7 +45,7 @@ You can find a script to upload them to, OR the US, OR EU DC in [this](../../hel
 storage by doing the following from the folder `appium-app-examples`:
 
     cd src/test/java/sauce/demo/helpers/
-    push_apps_to_storage.sh
+    ./push_apps_to_storage.sh
 
 ---
 ### Gitpod setup
@@ -57,12 +57,7 @@ storage by doing the following from the folder `appium-app-examples`:
  * Make sure you are logged into GitHub
  * Click the Fork in the upper right of the GitHub.
  * Give the repo a ⭐ while you're here 🤩
-3. Click here
-     
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/nadvolod/js-code/tree/master/web-testing-2022)
-
-OR  
-In the browser address bar, add your GitHub url (`https://github.com/USERNAME/this-repo-name`) with `https://gitpod.io/#`
+3.In the browser address bar, add your GitHub url (`https://github.com/USERNAME/this-repo-name`) with `https://gitpod.io/#`
     * The resulting url should look as follows:
    
       > https://gitpod.io/#https://github.com/USERNAME/sauce-java-appium-cross-platform
@@ -96,26 +91,35 @@ mvn clean test -DtestngXmlFile=demo.xml
       <strong>Click here</strong> to see an example console output.
     </summary>
 
-    [INFO] -------------------------------------------------------
-    [INFO]  T E S T S
-    [INFO] -------------------------------------------------------
-    [INFO] Running TestSuite
-    *** BeforeMethod hook. Running method demoTest ***
-    region is us
-    *** Start demoTest test ***
-    *** AfterMethod hook ***
-    [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.488 s - in TestSuite
-    [INFO] 
-    [INFO] Results:
-    [INFO] 
-    [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
-    [INFO] 
-    [INFO] ------------------------------------------------------------------------
-    [INFO] BUILD SUCCESS
-    [INFO] ------------------------------------------------------------------------
-    [INFO] Total time:  3.579 s
-    [INFO] Finished at: 2022-07-04T12:05:35+01:00
-    [INFO] ------------------------------------------------------------------------
+      [INFO]
+      [INFO] -------------------------------------------------------
+      [INFO]  T E S T S
+      [INFO] -------------------------------------------------------
+      [INFO] Running TestSuite
+      Sauce Android Native App  - Before hook
+      *** BeforeMethod hook. Running method addProductToCart ***
+      Sauce Android Native App  - Before hook
+      *** BeforeMethod hook. Running method addProductToCart ***
+      region is eu
+      region is eu
+      region is eu
+      region is eu
+      Sauce - Start selectProduct test
+      Sauce - Start selectProduct test
+      Sauce - AfterMethod hook
+      Sauce - AfterMethod hook
+      Sauce - Start selectProduct test
+      Sauce - release driver
+      Sauce - Start selectProduct test
+      Sauce - AfterMethod hook
+      Sauce - release driver
+      Sauce - AfterMethod hook
+      [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 31.102 s - in TestSuite
+      [INFO]
+      [INFO] Results:
+      [INFO]
+      [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+      [INFO]
 
   </details>
 
@@ -156,30 +160,39 @@ mvn clean test -DtestngXmlFile=demo.xml
       <strong>Click here</strong> to see an example console output.
     </summary>
 
-    [INFO] -------------------------------------------------------
-    [INFO]  T E S T S
-    [INFO] -------------------------------------------------------
-    [INFO] Running TestSuite
-    *** BeforeMethod hook. Running method demoTest ***
-    region is us
-    *** Start demoTest test ***
-    *** AfterMethod hook ***
-    [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.488 s - in TestSuite
-    [INFO] 
-    [INFO] Results:
-    [INFO] 
-    [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
-    [INFO] 
-    [INFO] ------------------------------------------------------------------------
-    [INFO] BUILD SUCCESS
-    [INFO] ------------------------------------------------------------------------
-    [INFO] Total time:  3.579 s
-    [INFO] Finished at: 2022-07-04T12:05:35+01:00
-    [INFO] ------------------------------------------------------------------------
+      [INFO]
+      [INFO] -------------------------------------------------------
+      [INFO]  T E S T S
+      [INFO] -------------------------------------------------------
+      [INFO] Running TestSuite
+      Sauce Android Native App  - Before hook
+      *** BeforeMethod hook. Running method addProductToCart ***
+      Sauce Android Native App  - Before hook
+      *** BeforeMethod hook. Running method addProductToCart ***
+      region is eu
+      region is eu
+      region is eu
+      region is eu
+      Sauce - Start selectProduct test
+      Sauce - Start selectProduct test
+      Sauce - AfterMethod hook
+      Sauce - AfterMethod hook
+      Sauce - Start selectProduct test
+      Sauce - release driver
+      Sauce - Start selectProduct test
+      Sauce - AfterMethod hook
+      Sauce - release driver
+      Sauce - AfterMethod hook
+      [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 31.102 s - in TestSuite
+      [INFO]
+      [INFO] Results:
+      [INFO]
+      [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+      [INFO]
 
   </details>
 
-</br>
+<br/>
 
 ## Extra resources
 
