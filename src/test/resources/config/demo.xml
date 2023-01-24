@@ -23,17 +23,6 @@
 		</classes>
 	</test>
 
-	<test name="iOS Simulator App test" enabled="false">
-		<parameter name="rdc" value="false"></parameter>
-		<parameter name="deviceName" value="iPhone 14 Simulator"></parameter>
-		<parameter name="platformVersion" value="16.1"></parameter>
-		<parameter name="app" value="SauceLabs-Demo-App.Simulator.zip"></parameter>
-
-		<classes>
-			<class name="sauce.demo.tests.ios.DemoAppTest"/>
-		</classes>
-	</test>
-
 	<test name="Android RDC App test" enabled="true">
 		<parameter name="rdc" value="true"></parameter>
 		<parameter name="deviceName" value="Samsung.*"></parameter>
@@ -51,6 +40,17 @@
 		<parameter name="app" value="my-demo-app-android.apk"></parameter>
 		<classes>
 			<class name="sauce.demo.tests.android.DemoAppTest"/>
+		</classes>
+	</test>
+
+	<test name="iOS Simulator App test" enabled="false">
+		<parameter name="rdc" value="false"></parameter>
+		<parameter name="deviceName" value="iPhone 14 Simulator"></parameter>
+		<parameter name="platformVersion" value="16.1"></parameter>
+		<parameter name="app" value="SauceLabs-Demo-App.Simulator.zip"></parameter>
+
+		<classes>
+			<class name="sauce.demo.tests.ios.DemoAppTest"/>
 		</classes>
 	</test>
 
