@@ -82,6 +82,7 @@ public class DemoAppTest {
         }
         // Sauce capabilities
         sauceOptions.setCapability("name", methodName);
+        sauceOptions.setCapability("build", "RDC Native Simple Example: build-" + dt.hourOfDay().getAsText() + "-" + dt.minuteOfHour().getAsText());
         sauceOptions.setCapability("username", System.getenv("SAUCE_USERNAME"));
         sauceOptions.setCapability("accessKey", System.getenv("SAUCE_ACCESS_KEY"));
         capabilities.setCapability("sauce:options", sauceOptions);

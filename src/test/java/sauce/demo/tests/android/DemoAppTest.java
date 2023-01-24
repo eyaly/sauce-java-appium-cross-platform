@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumBy.ById;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import org.joda.time.DateTime;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -82,6 +83,8 @@ public class DemoAppTest {
 //        List<String> tags = Arrays.asList("sauceDemo_android", "android", "Demo");
 //        sauceOptions.setCapability("tags", tags);
         sauceOptions.setCapability("name", method.getName());
+        DateTime dt = new DateTime();
+        sauceOptions.setCapability("build", "RDC Native Simple Example: build-" + dt.hourOfDay().getAsText() + "-" + dt.minuteOfHour().getAsText());
         sauceOptions.setCapability("username", System.getenv("SAUCE_USERNAME"));
         sauceOptions.setCapability("accessKey", System.getenv("SAUCE_ACCESS_KEY"));
         capabilities.setCapability("sauce:options", sauceOptions);
