@@ -205,16 +205,16 @@ Run the tests
 ## Running GitHub Actions
 You can run the Appium tests directly from GitHub using GitHub Actions   
 1. Add two new variables: SAUCE_USERNAME and SAUCE_ACCESS_KEY to your GitHub Repository Secret, as shown in the snapshot    
-   <img src="./graphics/GitHub_Repository_Secret.png" alt="GitHubSecret" width="400"/>   
+   <img src="./graphics/GitHub_Repository_Secret.png" alt="GitHubSecret" width="400" height="400/>   
 More info can be found [here](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
 2. Select (1) Actions tab -> (2) Click on "Real Devices" (3) Click "Run workflow" and (4) Run workflow
-   <img src="./graphics/run_github_actions.png" alt="runGitHubActions" width="600"/>   
+   <img src="./graphics/run_github_actions.png" alt="runGitHubActions" width="600" height="600/>   
 3. GitHub Actions starts to run
-   <img src="./graphics/start_running_githubActions.png" alt="startRunGitHubActions" width="800"/>
+   <img src="./graphics/start_running_githubActions.png" alt="startRunGitHubActions" width="800" height="800/>
 4. You should see four test executions running in Sauce Labs platform
-   <img src="./graphics/run_sauceLabs.png" alt="runningGitHubActions" width="200"/>    
+   <img src="./graphics/run_sauceLabs.png" alt="runningGitHubActions" width="200" height="200/>    
 5. Wait till the tests passed
-   <img src="./graphics/test_run_passed.png" alt="passedRunGitHubActions" width="200"/>    
+   <img src="./graphics/test_run_passed.png" alt="passedRunGitHubActions" width="200" height="200/>    
 
 ## Extra resources
 
