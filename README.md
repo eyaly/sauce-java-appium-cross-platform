@@ -213,9 +213,9 @@ More info can be found [here](https://docs.github.com/en/actions/security-guides
 3. GitHub Actions starts to run     
    <img src="./graphics/start_running_githubActions.png" alt="startRunGitHubActions" width="200" height="300"/>    
 4. You should see four test executions running in Sauce Labs platform
-   <img src="./graphics/run_sauceLabs.png" alt="runningGitHubActions" width="700" height="300"/>    
+   <img src="./graphics/run_sauceLabs.png" alt="runningGitHubActions" width="700" height="200"/>    
 5. Wait till the tests passed
-   <img src="./graphics/test_run_passed.png" alt="passedRunGitHubActions" width="700" height="300"/>     
+   <img src="./graphics/test_run_passed.png" alt="passedRunGitHubActions" width="700" height="200"/>     
 
 ## Extra resources
 
