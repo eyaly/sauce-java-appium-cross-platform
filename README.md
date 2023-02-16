@@ -209,7 +209,7 @@ You can run the Appium tests directly from GitHub using GitHub Actions
      
 More info can be found [here](https://docs.github.com/en/actions/security-guides/encrypted-secrets).    
 2. Select (1) Actions tab -> (2) Click on "Real Devices" (3) Click "Run workflow" and (4) Run workflow
-   <img src="./graphics/run_github_actions.png" alt="runGitHubActions" width="700" height="300"/>   
+   <img src="./graphics/run_github_actions.png" alt="runGitHubActions" />   
 3. GitHub Actions starts to run     
    <img src="./graphics/start_running_githubActions.png" alt="startRunGitHubActions" />    
 4. You should see four test executions running in Sauce Labs platform
