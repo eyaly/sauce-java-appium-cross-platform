@@ -202,6 +202,11 @@ Run the tests
 
 <br/>
 
+## Running GitHub Actions
+You can run the Appium tests directly from GitHub web-site using GitHub Actions
+1. 
+2. Make sure you know how to find your Sauce Labs Username and Access Key by going to the [Sauce Labs user settings page](https://app.saucelabs.com/user-settings)
+
 ## Extra resources
 
 - [Appium options for sauce](https://docs.saucelabs.com/dev/test-configuration-options/#mobile-app-appium-capabilities-required)
