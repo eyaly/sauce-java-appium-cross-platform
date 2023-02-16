@@ -211,7 +211,7 @@ More info can be found [here](https://docs.github.com/en/actions/security-guides
 2. Select (1) Actions tab -> (2) Click on "Real Devices" (3) Click "Run workflow" and (4) Run workflow
    <img src="./graphics/run_github_actions.png" alt="runGitHubActions" width="700" height="300"/>   
 3. GitHub Actions starts to run     
-   <img src="./graphics/start_running_githubActions.png" alt="startRunGitHubActions" width="200" height="300"/>    
+   <img src="./graphics/start_running_githubActions.png" alt="startRunGitHubActions" width="400" height="300"/>    
 4. You should see four test executions running in Sauce Labs platform
    <img src="./graphics/run_sauceLabs.png" alt="runningGitHubActions" width="800" height="250"/>    
 5. Wait till the tests passed
