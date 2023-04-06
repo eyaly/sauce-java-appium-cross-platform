@@ -2,6 +2,8 @@ package sauce.demo.tests.ios;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.AutomationName;
+import io.appium.java_client.remote.MobilePlatform;
 import org.joda.time.DateTime;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,8 +20,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-
-import static sauce.demo.helpers.Constants.region;
+import static sauce.demo.helpers.Constants.*;
 
 public class DemoAppTest {
 
@@ -71,8 +72,8 @@ public class DemoAppTest {
         // Use the platform configuration https://saucelabs.com/platform/platform-configurator#/
         // to find the simulators/real device names, OS versions and appium versions you can use for your testings
 
-        capabilities.setCapability("platformName", "iOS");
-        capabilities.setCapability("automationName", "XCuiTest");
+        capabilities.setCapability("platformName", MobilePlatform.IOS);
+        capabilities.setCapability("appium:automationName", AutomationName.IOS_XCUI_TEST);
         capabilities.setCapability("appium:deviceName", deviceName == null ? "iPhone.*" : deviceName);
         capabilities.setCapability("appium:platformVersion", platformVersion == null ? "14" : platformVersion);
         capabilities.setCapability("appium:app", "storage:filename=" + appName );
@@ -85,8 +86,9 @@ public class DemoAppTest {
         sauceOptions.setCapability("name", methodName);
         DateTime dt = new DateTime();
         sauceOptions.setCapability("build", "RDC Native Simple Example: build-" + dt.hourOfDay().getAsText() + "-" + dt.minuteOfHour().getAsText());
-        sauceOptions.setCapability("username", System.getenv("SAUCE_USERNAME"));
-        sauceOptions.setCapability("accessKey", System.getenv("SAUCE_ACCESS_KEY"));
+        sauceOptions.setCapability("username", SAUCE_USERNAME);
+        sauceOptions.setCapability("accessKey", SAUCE_ACCESS_KEY);
+        sauceOptions.setCapability("appiumVersion", "2.0.0");
         capabilities.setCapability("sauce:options", sauceOptions);
 
         try {

@@ -5,6 +5,7 @@
 		<parameter name="rdc" value="true"></parameter>
 		<parameter name="deviceName" value="iPhone.*"></parameter>
 		<parameter name="platformVersion" value="1[5-6].*"></parameter>
+		<parameter name="appiumVersion" value="2.0.0"></parameter>
 		<parameter name="app" value="SauceLabs-Demo-App.ipa"></parameter>
 
 		<classes>
@@ -16,6 +17,7 @@
 		<parameter name="rdc" value="true"></parameter>
 		<parameter name="deviceName" value="iPad.*"></parameter>
 		<parameter name="platformVersion" value="1[4-6].*"></parameter>
+		<parameter name="appiumVersion" value="2.0.0"></parameter>
 		<parameter name="app" value="SauceLabs-Demo-App.ipa"></parameter>
 
 		<classes>
@@ -27,6 +29,7 @@
 		<parameter name="rdc" value="true"></parameter>
 		<parameter name="deviceName" value="Samsung.*"></parameter>
 		<parameter name="platformVersion" value="12"></parameter>
+		<parameter name="appiumVersion" value="2.0.0"></parameter>
 		<parameter name="app" value="my-demo-app-android.apk"></parameter>
 		<classes>
 			<class name="sauce.demo.tests.android.DemoAppTest"/>
@@ -37,16 +40,18 @@
 		<parameter name="rdc" value="true"></parameter>
 		<parameter name="deviceName" value="Google Pixel.*"></parameter>
 		<parameter name="platformVersion" value="13"></parameter>
+		<parameter name="appiumVersion" value="2.0.0"></parameter>
 		<parameter name="app" value="my-demo-app-android.apk"></parameter>
 		<classes>
 			<class name="sauce.demo.tests.android.DemoAppTest"/>
 		</classes>
 	</test>
 
-	<test name="iOS Simulator App test" enabled="false">
+	<test name="iOS Simulator App test" enabled="true">
 		<parameter name="rdc" value="false"></parameter>
 		<parameter name="deviceName" value="iPhone 14 Simulator"></parameter>
 		<parameter name="platformVersion" value="16.1"></parameter>
+		<parameter name="appiumVersion" value="2.0.0-beta56"></parameter>
 		<parameter name="app" value="SauceLabs-Demo-App.Simulator.zip"></parameter>
 
 		<classes>
@@ -54,10 +59,11 @@
 		</classes>
 	</test>
 
-	<test name="Android Emulator App test" enabled="false">
+	<test name="Android Emulator App test" enabled="true">
 		<parameter name="rdc" value="false"></parameter>
 		<parameter name="deviceName" value="Android GoogleAPI Emulator"></parameter>
-		<parameter name="platformVersion" value="12"></parameter>
+		<parameter name="platformVersion" value="12.0"></parameter>
+<!--		<parameter name="appiumVersion" value="2.0.0-beta56"></parameter>-->
 		<parameter name="app" value="my-demo-app-android.apk"></parameter>
 		<classes>
 			<class name="sauce.demo.tests.android.DemoAppTest"/>
