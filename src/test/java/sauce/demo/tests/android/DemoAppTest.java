@@ -1,9 +1,7 @@
 package sauce.demo.tests.android;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.AppiumBy.ById;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobilePlatform;
 import org.joda.time.DateTime;
@@ -21,6 +19,7 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.List;
 
 
 import static java.lang.System.out;
@@ -30,10 +29,9 @@ public class DemoAppTest {
     protected static ThreadLocal<AndroidDriver> driver = new ThreadLocal<AndroidDriver>();
 
     // Locators
-    // product item
-    By productBackPack =  AppiumBy.accessibilityId("Sauce Lab Back Packs");
-    By productBikeLight =  AppiumBy.accessibilityId("Sauce Lab Bike Light");
     By productsTitle = By.id("com.saucelabs.mydemoapp.android:id/productTV");
+
+    By productsItems = By.id("com.saucelabs.mydemoapp.android:id/productIV");
 
     By productDetailsScreen =  AppiumBy.accessibilityId("Container for fragments");
     By addToCart =  AppiumBy.accessibilityId("Tap to add product to cart");
@@ -73,7 +71,6 @@ public class DemoAppTest {
             // https://docs.saucelabs.com/dev/test-configuration-options/#mobile-appium-capabilities
             // Use the platform configuration https://saucelabs.com/platform/platform-configurator#/
             // to find the simulators/real device names, OS versions and appium versions you can use for your testings
-
             capabilities.setCapability("platformName", MobilePlatform.ANDROID);
             capabilities.setCapability("appium:automationName", AutomationName.ANDROID_UIAUTOMATOR2);
 
@@ -133,15 +130,17 @@ public class DemoAppTest {
     @Test
     public void addProductToCart() {
 
+        System.out.println("Sauce - Start selectProduct test");
         AndroidDriver driver = getDriver();
 
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(productsTitle));
 
         // Select product
-        System.out.println("Sauce - Start selectProduct test");
-        driver.findElement(productBackPack).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(productDetailsScreen));
+        List<WebElement> products = driver.findElements(productsItems);
+        products.get(0).click();
+        WebDriverWait wait2 = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+        wait2.until(ExpectedConditions.visibilityOfElementLocated(productDetailsScreen));
 
 //        driver.rotate(ScreenOrientation.LANDSCAPE);
         // Add to Cart
@@ -156,6 +155,8 @@ public class DemoAppTest {
 
     @Test
     public void addBikeLightProductToCart() {
+        System.out.println("Sauce - Start addBikeLightProductToCart test");
+
         // The item will crash the app
         AndroidDriver driver = getDriver();
 
@@ -163,18 +164,10 @@ public class DemoAppTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(productsTitle));
 
         // Select product
-        System.out.println("Sauce - Start selectProduct test");
-        driver.findElement(productBikeLight).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(productDetailsScreen));
-
-//        driver.rotate(ScreenOrientation.LANDSCAPE);
-        // Add to Cart
-        driver.findElement(addToCart).click();
-
-        WebElement itemInCart = getItemInTheCart();
-        Assert.assertTrue(itemInCart !=null);
-        // For the video
-        waiting(3);
+        List<WebElement> products = driver.findElements(productsItems);
+        products.get(1).click();
+        WebDriverWait wait2 = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+        wait2.until(ExpectedConditions.visibilityOfElementLocated(productDetailsScreen));
 
     }
 

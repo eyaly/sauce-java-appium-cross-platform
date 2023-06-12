@@ -36,7 +36,7 @@
 		</classes>
 	</test>
 
-	<test name="Android Emulator App test" enabled="true">
+	<test name="Android Emulator App test" parallel="methods" enabled="true">
 		<parameter name="rdc" value="false"></parameter>
 		<parameter name="deviceName" value="Android GoogleAPI Emulator"></parameter>
 		<parameter name="platformVersion" value="12.0"></parameter>
