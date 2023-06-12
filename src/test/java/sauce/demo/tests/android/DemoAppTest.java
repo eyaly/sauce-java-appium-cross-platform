@@ -31,11 +31,12 @@ public class DemoAppTest {
 
     // Locators
     // product item
-    AppiumBy.ByAccessibilityId productBackPack = new AppiumBy.ByAccessibilityId("Sauce Lab Back Packs");
+    By productBackPack =  AppiumBy.accessibilityId("Sauce Lab Back Packs");
+    By productBikeLight =  AppiumBy.accessibilityId("Sauce Lab Bike Light");
     By productsTitle = By.id("com.saucelabs.mydemoapp.android:id/productTV");
 
-    AppiumBy.ByAccessibilityId productDetailsScreen = new AppiumBy.ByAccessibilityId("Container for fragments");
-    AppiumBy.ByAccessibilityId addToCart = new AppiumBy.ByAccessibilityId("Tap to add product to cart");
+    By productDetailsScreen =  AppiumBy.accessibilityId("Container for fragments");
+    By addToCart =  AppiumBy.accessibilityId("Tap to add product to cart");
 
     By CartOneItem = By.id("com.saucelabs.mydemoapp.android:id/cartTV");
 
@@ -140,6 +141,30 @@ public class DemoAppTest {
         // Select product
         System.out.println("Sauce - Start selectProduct test");
         driver.findElement(productBackPack).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productDetailsScreen));
+
+//        driver.rotate(ScreenOrientation.LANDSCAPE);
+        // Add to Cart
+        driver.findElement(addToCart).click();
+
+        WebElement itemInCart = getItemInTheCart();
+        Assert.assertTrue(itemInCart !=null);
+        // For the video
+        waiting(3);
+
+    }
+
+    @Test
+    public void addBikeLightProductToCart() {
+        // The item will crash the app
+        AndroidDriver driver = getDriver();
+
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productsTitle));
+
+        // Select product
+        System.out.println("Sauce - Start selectProduct test");
+        driver.findElement(productBikeLight).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(productDetailsScreen));
 
 //        driver.rotate(ScreenOrientation.LANDSCAPE);

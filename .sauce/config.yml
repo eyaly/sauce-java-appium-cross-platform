@@ -6,6 +6,6 @@ suites:
   - name: Hosted Test Orchestration Demo
     image: eyalyovelsauce/sauce-java-appium-cross-platform-docker:0.0.1
     entrypoint: mvn clean install
-    imagePullAuth:
-      user: $DOCKER_USERNAME
-      token: $DOCKER_PASSWORD
+#    imagePullAuth:
+#      user: $DOCKER_USERNAME
+#      token: $DOCKER_PASSWORD

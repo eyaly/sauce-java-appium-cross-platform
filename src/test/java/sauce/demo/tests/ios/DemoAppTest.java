@@ -24,19 +24,19 @@ import static sauce.demo.helpers.Constants.*;
 
 public class DemoAppTest {
 
-    private String SAUCE_EU_URL = "https://ondemand.eu-central-1.saucelabs.com/wd/hub";
+    private String SAUCE_EU_URL = "https://ondemand.eu-central-1.saucelabs.com:443/wd/hub";
     private String SAUCE_US_URL = "https://ondemand.us-west-1.saucelabs.com/wd/hub";
 
     private static ThreadLocal<IOSDriver> iosDriver = new ThreadLocal<IOSDriver>();
 
     // Locators
     // product item
-    AppiumBy.ByAccessibilityId productBackPack = new AppiumBy.ByAccessibilityId("Sauce Lab Back Packs");
-    AppiumBy.ByAccessibilityId productsTitle = new AppiumBy.ByAccessibilityId("Products");
+    By productBackPack =  AppiumBy.accessibilityId("Sauce Lab Back Packs");
+    By productsTitle =  AppiumBy.accessibilityId("Products");
 
-    AppiumBy.ByAccessibilityId productDetailsScreen = new AppiumBy.ByAccessibilityId("ProductDetails-screen");
-    AppiumBy.ByAccessibilityId addToCart = new AppiumBy.ByAccessibilityId("Add To Cart");
-    By.ByXPath CartOneItem = new AppiumBy.ByXPath("//XCUIElementTypeStaticText[@name=\"1\"]");
+    By productDetailsScreen = AppiumBy.accessibilityId("ProductDetails-screen");
+    By addToCart = AppiumBy.accessibilityId("Add To Cart");
+    By.ByXPath CartOneItem =  new By.ByXPath("//XCUIElementTypeStaticText[@name=\"1\"]");
 
     @BeforeMethod
     public void setup(Method method) throws MalformedURLException {
