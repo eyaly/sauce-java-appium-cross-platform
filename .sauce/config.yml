@@ -4,6 +4,7 @@ sauce:
   region: eu-central-1
 suites:
   - name: Hosted Test Orchestration Demo
+    workload: webdriver
     image: eyalyovelsauce/sauce-java-appium-cross-platform-docker:0.0.1
     entrypoint: mvn clean install
 #    imagePullAuth:
