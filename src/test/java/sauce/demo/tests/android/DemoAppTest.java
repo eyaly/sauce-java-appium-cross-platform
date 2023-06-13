@@ -6,6 +6,9 @@ import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobilePlatform;
 import org.joda.time.DateTime;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Pause;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -19,6 +22,7 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -140,12 +144,20 @@ public class DemoAppTest {
         List<WebElement> products = driver.findElements(productsItems);
         products.get(0).click();
         WebDriverWait wait2 = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
-        wait2.until(ExpectedConditions.visibilityOfElementLocated(productDetailsScreen));
+        WebElement productDetailsElement = wait2.until(ExpectedConditions.visibilityOfElementLocated(productDetailsScreen));
 
-//        driver.rotate(ScreenOrientation.LANDSCAPE);
+
         // Add to Cart
-        driver.findElement(addToCart).click();
+        WebElement addToCartElm = null;
+        try {
+            addToCartElm = driver.findElement(addToCart);
+        } catch (NoSuchElementException ex){
+            // scroll
+            scrollElementUP(productDetailsElement);
+            addToCartElm = driver.findElement(addToCart);
+        }
 
+        addToCartElm.click();
         WebElement itemInCart = getItemInTheCart();
         Assert.assertTrue(itemInCart !=null);
         // For the video
@@ -191,6 +203,45 @@ public class DemoAppTest {
         catch(InterruptedException ex)
         {
             Thread.currentThread().interrupt();
+        }
+    }
+
+    public void scrollElementUP(WebElement el) {
+        AndroidDriver driver = getDriver();
+        // 1. The rectangle of the element to scroll
+        Rectangle rect = el.getRect();
+
+        // 2. Determine the x and y position of initial touch
+        // we scroll up and the x doesn't change
+        int centerX = rect.x + (int)(rect.width /2);
+        // The starting Y position
+        int startY = rect.y + (int)(rect.height*0.9);
+        // The end Y position
+        int endY = rect.y;
+
+        // 3. swipe: https://appium.io/docs/en/commands/interactions/actions/
+        // finger
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence tapPoint = new Sequence(finger, 1);
+        // Move finger into start position
+        tapPoint.addAction(finger.createPointerMove(Duration.ofMillis(0), PointerInput.Origin.viewport(), centerX, startY));
+        // Finger comes down into context with screen
+        tapPoint.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        // Pause for a little bit
+        tapPoint.addAction(new Pause(finger, Duration.ofMillis(100)));
+        // Finger move to end position
+        tapPoint.addAction(finger.createPointerMove(Duration.ofMillis(500), PointerInput.Origin.viewport(), centerX, endY));
+        // Finger gets up, off the screen
+        tapPoint.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+        // Perform the scroll
+        driver.perform(Arrays.asList(tapPoint));
+
+        // always allow scroll action to complete
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            // ignore
         }
     }
 }

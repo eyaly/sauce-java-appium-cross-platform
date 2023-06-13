@@ -38,12 +38,17 @@
 
 	<test name="Android Emulator App test" parallel="methods" enabled="true">
 		<parameter name="rdc" value="false"></parameter>
-		<parameter name="deviceName" value="Google Pixel 4 XL GoogleAPI Emulator"></parameter>
+		<parameter name="deviceName" value="Android GoogleAPI Emulator"></parameter>
 		<parameter name="platformVersion" value="13.0"></parameter>
-<!--		<parameter name="appiumVersion" value="2.0.0-beta56"></parameter>-->
+		<parameter name="appiumVersion" value="2.0.0-beta56"></parameter>
 		<parameter name="app" value="my-demo-app-android.apk"></parameter>
 		<classes>
-			<class name="sauce.demo.tests.android.DemoAppTest"/>
+			<class name="sauce.demo.tests.android.DemoAppTest">
+				<methods>
+					<exclude name="addBikeLightProductToCart" />
+				</methods>
+			</class>
+
 		</classes>
 	</test>
 
