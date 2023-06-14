@@ -215,7 +215,57 @@ More info can be found [here](https://docs.github.com/en/actions/security-guides
 4. You should see four test executions running in Sauce Labs platform
    <img src="./graphics/run_sauceLabs.png" alt="runningGitHubActions" />    
 5. Wait till the tests passed
-   <img src="./graphics/test_run_passed.png" alt="passedRunGitHubActions" />     
+   <img src="./graphics/test_run_passed.png" alt="passedRunGitHubActions" />   
+
+## Running the tests using Sauce Orchestrate (SO)
+You can run the Appium tests using SO directly from GitHub using GitHub Actions
+1. Add two new variables: SAUCE_USERNAME and SAUCE_ACCESS_KEY to your GitHub Repository Secret, as shown in the snapshot    
+   <img src="./graphics/GitHub_Repository_Secret.png" alt="GitHubSecret"/>
+2. Add also the two variables: DOCKERHUB_USERNAME and DOCKERHUB_TOKEN to your GitHub Repository Secret with your Docker username and password.
+
+    More info can be found [here](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
+2. Select (1) Actions tab -> (2) Click on "native app workflow using ImageRunner" (3) Click "Run workflow" and (4) Run workflow
+3. GitHub Actions starts to run     
+   <img src="./graphics/start_running_githubActions.png" alt="startRunGitHubActions" />
+
+### The steps to create the image, run a local container and run it using SO
+1. Run the tests locally by using the command:
+
+```java
+        mvn clean test
+```
+2. Make sure tests run as expected.
+3. Check docker is up and running by using the command:
+
+```java
+        docker info
+```
+4. Create the [docker file](https://github.com/eyaly/sauce-java-appium-cross-platform/blob/main/Dockerfile)
+5. build the image from the docker file 
+```java
+        // The format
+        $ docker build -t <docker username>/<project-name>-<container-name>:<tag>  <path-to-dockerfile>
+       // Example
+        $ docker build -t eyalyovelsauce/sauce-java-appium-cross-platform-docker:0.0.1 .
+```
+6. The image should be in the local docker
+   <img src="./graphics/Docker_Image_local.png" alt="local_docker"/>
+7. Run the image container locally
+```java
+        $ docker run --rm -e SAUCE_USERNAME=${SAUCE_USERNAME}  -e SAUCE_ACCESS_KEY=${SAUCE_ACCESS_KEY}  eyalyovelsauce/sauce-java-appium-cross-platform-docker:0.0.1
+```
+8. Push Image to a Docker Registry
+```java
+        $ docker login
+        $ docker push eyalyovelsauce/sauce-java-appium-cross-platform-docker:0.0.1
+```
+9. The image should be in the docker Hub
+      <img src="./graphics/Docker_Image_hub.png" alt="local_docker"/>
+8. Run SO by using the saucectl:
+```java
+        $ saucectl run
+```
+The saucectl config file is [here](https://github.com/eyaly/sauce-java-appium-cross-platform/blob/main/.sauce/config.yml)
 
 ## Extra resources
 
