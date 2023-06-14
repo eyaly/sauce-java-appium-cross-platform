@@ -5,7 +5,7 @@ sauce:
 suites:
   - name: Hosted Test Orchestration Demo
     workload: webdriver
-    image: eyalyovelsauce/sauce-java-appium-cross-platform-docker:latest
+    image: $DOCKERHUB_USERNAME/sauce-java-appium-cross-platform-docker:latest
     entrypoint: mvn clean install
 #    imagePullAuth:
 #      user: $DOCKER_USERNAME
