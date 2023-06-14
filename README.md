@@ -226,7 +226,7 @@ You can run the Appium tests using SO directly from GitHub using GitHub Actions
     More info can be found [here](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
 2. Select (1) Actions tab -> (2) Click on "native app workflow using ImageRunner" (3) Click "Run workflow" and (4) Run workflow
 3. GitHub Actions starts to run     
-   <img src="./graphics/github_action_SO_workflows.png" alt="startRunGitHubActionsSO" />
+   <img src="./graphics/github_action_SO_workflow.png" alt="startRunGitHubActionsSO" />
 
 ### The steps to create the image, run a local container and run it using SO
 1. Run the tests locally by using the command:
