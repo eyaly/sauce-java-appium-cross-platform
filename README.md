@@ -226,7 +226,7 @@ You can run the Appium tests using SO directly from GitHub using GitHub Actions
     More info can be found [here](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
 2. Select (1) Actions tab -> (2) Click on "native app workflow using ImageRunner" (3) Click "Run workflow" and (4) Run workflow
 3. GitHub Actions starts to run     
-   <img src="./graphics/start_running_githubActions.png" alt="startRunGitHubActions" />
+   <img src="./graphics/github_action_SO_workflows.png" alt="startRunGitHubActionsSO" />
 
 ### The steps to create the image, run a local container and run it using SO
 1. Run the tests locally by using the command:
@@ -260,7 +260,7 @@ You can run the Appium tests using SO directly from GitHub using GitHub Actions
         $ docker push eyalyovelsauce/sauce-java-appium-cross-platform-docker:0.0.1
 ```
 9. The image should be in the docker Hub
-      <img src="./graphics/Docker_Image_hub.png" alt="local_docker"/>
+      <img src="./graphics/Docker_Image_hub.png" alt="hub_docker"/>
 8. Run SO by using the saucectl:
 ```java
         $ saucectl run
