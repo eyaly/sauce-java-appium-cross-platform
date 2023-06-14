@@ -28,7 +28,7 @@ jobs:
       - name: Build docker image
         uses: docker/build-push-action@v3
         with:
-          context: webdriverio
+          context: .
           push: true
           load: false
           tags: eyalyovelsauce/sauce-java-appium-cross-platform-docker:latest
