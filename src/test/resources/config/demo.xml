@@ -13,7 +13,7 @@
 		</classes>
 	</test>
 
-	<test name="Android RDC App test" parallel="methods" enabled="false">
+	<test name="Android RDC App test" parallel="methods" enabled="true">
 		<parameter name="rdc" value="true"></parameter>
 		<parameter name="deviceName" value="Samsung.*"></parameter>
 		<parameter name="platformVersion" value="1[2-3]"></parameter>
