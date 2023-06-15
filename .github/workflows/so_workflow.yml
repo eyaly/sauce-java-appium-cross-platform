@@ -32,7 +32,7 @@ jobs:
           context: .
           push: true
           load: false
-          tags: eyalyovelsauce/sauce-java-appium-cross-platform-docker:latest
+          tags: $DOCKERHUB_USERNAME/sauce-java-appium-cross-platform-docker:latest
 
   run-appium-sauce:
     runs-on: windows-latest
