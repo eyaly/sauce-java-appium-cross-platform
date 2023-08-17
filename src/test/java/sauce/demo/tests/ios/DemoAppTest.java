@@ -31,7 +31,7 @@ public class DemoAppTest {
 
     // Locators
     // product item
-    By productBackPack =  AppiumBy.accessibilityId("Sauce Lab Back Packs");
+    By productBackPack =  AppiumBy.accessibilityId("Sauce Labs Backpack");
     By productsTitle =  AppiumBy.accessibilityId("Products");
 
     By productDetailsScreen = AppiumBy.accessibilityId("ProductDetails-screen");

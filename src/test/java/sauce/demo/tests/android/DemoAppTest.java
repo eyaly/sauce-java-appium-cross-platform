@@ -166,8 +166,8 @@ public class DemoAppTest {
     }
 
     @Test
-    public void addBikeLightProductToCart() {
-        System.out.println("Sauce - Start addBikeLightProductToCart test");
+    public void selectProductBikeLight() {
+        System.out.println("Sauce - Start selectProductBikeLight test");
 
         // The item will crash the app
         AndroidDriver driver = getDriver();
@@ -180,6 +180,15 @@ public class DemoAppTest {
         products.get(1).click();
         WebDriverWait wait2 = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
         wait2.until(ExpectedConditions.visibilityOfElementLocated(productDetailsScreen));
+
+        try
+        {
+            Thread.sleep(3000);
+        }
+        catch(InterruptedException ex)
+        {
+            Thread.currentThread().interrupt();
+        }
 
     }
 
