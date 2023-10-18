@@ -15,7 +15,7 @@
         <testngXmlDir>src/test/resources/config</testngXmlDir>
         <testngXmlFile>demo.xml</testngXmlFile>
         <testng.version>7.6.1</testng.version>
-        <appium.version>8.5.0</appium.version>
+        <appium.version>9.0.0</appium.version>
 <!--        <appium.version>7.5.0</appium.version>-->
     </properties>
 

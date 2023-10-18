@@ -16,7 +16,7 @@
 		<parameter name="rdc" value="true"></parameter>
 		<parameter name="deviceName" value="Samsung.*"></parameter>
 		<parameter name="platformVersion" value="1[2-3]"></parameter>
-<!--		<parameter name="appiumVersion" value="2.0.0"></parameter>-->
+		<parameter name="appiumVersion" value="2.0.0"></parameter>
 		<parameter name="app" value="my-demo-app-android.apk"></parameter>
 		<classes>
 			<class name="sauce.demo.tests.android.DemoAppTest"/>
@@ -27,7 +27,7 @@
 		<parameter name="rdc" value="false"></parameter>
 		<parameter name="deviceName" value="iPhone Instant Simulator"></parameter>
 		<parameter name="platformVersion" value="current_major"></parameter>
-<!--		<parameter name="appiumVersion" value="2.0.0-beta56"></parameter>-->
+		<parameter name="appiumVersion" value="2.0.0"></parameter>
 		<parameter name="app" value="SauceLabs-Demo-App.Simulator.zip"></parameter>
 		<classes>
 			<class name="sauce.demo.tests.ios.DemoAppTest"/>
