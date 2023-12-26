@@ -54,6 +54,7 @@ public class DemoAppTest {
         String appName = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("app");
         String rdc = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("rdc");
         String appiumVersion = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("appiumVersion");
+        String appWaitActivity = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("appWaitActivity");
 
         if (env.equals("saucelabs")) {
             switch (region) {
@@ -85,6 +86,8 @@ public class DemoAppTest {
             if (rdc.equals("true")) {
                 sauceOptions.setCapability("resigningEnabled", true);
                 sauceOptions.setCapability("sauceLabsNetworkCaptureEnabled", true);
+            } else {
+                capabilities.setCapability("appium:appWaitActivity", appWaitActivity);
             }
 //        sauceOptions.setCapability("build", "myApp-job-1");
 //        List<String> tags = Arrays.asList("sauceDemo_android", "android", "Demo");
