@@ -21,6 +21,14 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+    - name: Start SC
+      uses: saucelabs/sauce-connect-action@v2
+      with:
+        username: ${{ secrets.SAUCE_USERNAME }}
+        accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
+        tunnelName: github-action-tunnel
+        region: eu-central
+        noSSLBumpDomains: all
     - name: RDC Native App Android and iOS
       run: mvn clean test -Dregion=eu
 
